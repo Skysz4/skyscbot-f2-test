@@ -23,5 +23,3 @@ spec:
         repoUrl: ${{ parameters.targetRepo }}
         workflowId: dispatch.yml
         branchOrTagName: main
-        workflowInputs:
-          payload: "F2-PRIVESC-PROOF"
