@@ -1,16 +1,7 @@
-name: dispatch-target
-on:
-  workflow_dispatch:
-    inputs:
-      payload:
-        description: "payload"
-        required: true
+name: dispatch-min
+on: workflow_dispatch
 jobs:
-  deploy:
+  ping:
     runs-on: ubuntu-latest
-    permissions:
-      contents: write
-      id-token: write
     steps:
-      - run: echo "dispatch recebido: ${{ inputs.payload }}"
-# re-touch 1787969204
+      - run: echo "f2-dispatch-ok"
