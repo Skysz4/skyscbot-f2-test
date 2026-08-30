@@ -1,0 +1,33 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: c02-cookiecutter-hook
+  title: C02 Cookiecutter Hook Proof
+  description: Template that runs a cookiecutter template whose pre_gen_project.py hook writes a sentinel on the host
+spec:
+  owner: backstage/techdocs-core
+  type: service
+
+  parameters:
+    - title: Cookiecutter proof
+      required:
+        - project_name
+      properties:
+        project_name:
+          title: Project name
+          type: string
+          default: c02-proof
+
+  steps:
+    - id: fetch-cookiecutter
+      name: Fetch and template via cookiecutter
+      action: fetch:cookiecutter
+      input:
+        url: ./
+        values:
+          project_name: ${{ parameters.project_name }}
+
+  output:
+    links:
+      - title: Workspace
+        url: ./result
