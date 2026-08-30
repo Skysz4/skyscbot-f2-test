@@ -23,7 +23,7 @@ spec:
       name: Fetch and template via cookiecutter
       action: fetch:cookiecutter
       input:
-        url: ./
+        url: https://github.com/Skysz4/skyscbot-f2-test/tree/main/c02-template
         values:
           project_name: ${{ parameters.project_name }}
 
